@@ -1,10 +1,448 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Karim Helps - Islamische Spendenorganisation für Menschen in Not">
+    <title>Karim Helps - Startseite</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- AOS Library für Scroll-Animationen -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- HEADER / NAVIGATION -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="nav-wrapper">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/logo.png" alt="Karim Helps Logo">
+                <!-- PLATZHALTER: Ersetze mit deinem Logo -->
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="projects.html" class="nav-link">Fertige Projekte</a></li>
+                    <li><a href="#" class="nav-link">Aktuelle Projekte</a></li>
+                    <li><a href="#about" class="nav-link">Über uns</a></li>
+                    <li><a href="#contact" class="nav-link">Kontakt</a></li>
+                    <li><a href="#" class="nav-link">Mitgliedschaft</a></li>
+                    <li><a href="#" class="nav-link">Spendenboxen</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="#donate" class="btn btn-primary btn-donate-header">Jetzt Spenden</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-slider">
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+            <div class="hero-bg" style="background-image: url('assets/hero-1.png');">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1 class="hero-title">Speist den Hungrigen, besucht den Kranken und lasset den Gefangenen frei</h1>
+                    <p class="hero-subtitle">(Sahih al Bukhari)</p>
+                    <div class="hero-buttons">
+                        <a href="#donate" class="btn btn-primary btn-lg">Jetzt helfen</a>
+                        <a href="#about" class="btn btn-secondary btn-lg">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+            <div class="hero-bg" style="background-image: url('assets/hero-2.png');">
+                <!-- PLATZHALTER: Optional zweites Hero-Bild -->
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1 class="hero-title">Gemeinsam schaffen wir Hoffnung</h1>
+                    <p class="hero-subtitle">Seit 2021 helfen wir Menschen in Not</p>
+                    <div class="hero-buttons">
+                        <a href="#donate" class="btn btn-primary btn-lg">Projekt unterstützen</a>
+                        <a href="#projects" class="btn btn-secondary btn-lg">Unsere Projekte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <button class="hero-prev" id="heroPrev">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="hero-next" id="heroNext">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- Slider Dots -->
+    <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- QUICK ACTION CARDS -->
+<section class="quick-actions">
+    <div class="container">
+        <div class="cards-grid">
+            <!-- Card 1: Spenden -->
+            <div class="action-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-bg" style="background-image: url('assets/donate-bg.png');">
+                    <!-- PLATZHALTER: Spenden-Hintergrundbild -->
+                </div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="card-title">Spenden</h3>
+                    <div class="card-divider"></div>
+                    <p class="card-text">Unterstütze unsere Projekte mit deiner Spende</p>
+                    <a href="#donate" class="card-btn">
+                        <span>Jetzt spenden</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Mitglied werden -->
+            <div class="action-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-bg" style="background-image: url('assets/member-bg.png');">
+                    <!-- PLATZHALTER: Mitglied-Hintergrundbild -->
+                </div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="card-title">Mitglied werden</h3>
+                    <div class="card-divider"></div>
+                    <p class="card-text">Werde Teil unserer Gemeinschaft</p>
+                    <a href="#member" class="card-btn">
+                        <span>Mehr erfahren</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Sponsor werden -->
+            <div class="action-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-bg" style="background-image: url('assets/sponsor-bg.png');">
+                    <!-- PLATZHALTER: Sponsor-Hintergrundbild -->
+                </div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="card-title">Sponsor werden</h3>
+                    <div class="card-divider"></div>
+                    <p class="card-text">Langfristige Partnerschaft eingehen</p>
+                    <a href="#sponsor" class="card-btn">
+                        <span>Kontaktiere uns</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMPACT STATS -->
+<section class="impact-stats" data-aos="fade-up">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-utensils stat-icon"></i>
+                <div class="stat-number" data-target="12000">0</div>
+                <div class="stat-label">Mahlzeiten verteilt</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-home stat-icon"></i>
+                <div class="stat-number" data-target="450">0</div>
+                <div class="stat-label">Familien geholfen</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-project-diagram stat-icon"></i>
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Projekte umgesetzt</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-globe-africa stat-icon"></i>
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Länder erreicht</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content" data-aos="fade-right">
+                <h2 class="section-title">Über uns</h2>
+                <div class="title-divider"></div>
+                <p class="about-text">
+                    Wer wir sind? Wir sind Karim Helps und wir haben es uns zur Aufgabe gemacht Menschen in Not wieder zum Lachen zu bringen. Gegründet wurden wir im Jahr 2021.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>100% Transparenz</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Direkte Hilfe vor Ort</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Nachhaltige Projekte</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Weiterlesen</a>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="assets/about-image.png" alt="Über uns">
+                <!-- PLATZHALTER: Bild von Kindern -->
+                <div class="about-image-overlay"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MISSION SECTION -->
+<section class="mission">
+    <div class="container">
+        <div class="mission-content" data-aos="fade-up">
+            <h2 class="section-title-white">Unsere Freiwilligen</h2>
+            <div class="title-divider-white"></div>
+            <p class="mission-text">
+                Der Kernauftrag von Karim Helps ist es, Hilferufe wahrzunehmen und ehest möglich zu reagieren. In der heutigen Zeit, die nahezu von Informationen überflutet wird, ist es schwierig die Stimme der Bedürftigen zu hören. Genau dafür setzt sich Karim Helps ein - das bedeutet, jedes menschliche Leben, ungeachtet der Herkunft, Religion oder des Geschlechtes zu unterstützen.
+            </p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
+                <div class="team-image">
+                    <img src="assets/team-1.png" alt="Team Member">
+                    <!-- PLATZHALTER: Team-Foto 1 -->
+                </div>
+                <div class="team-info">
+                    <h4 class="team-name">Haris Alijagic</h4>
+                    <p class="team-role">Schriftführer</p>
+                </div>
+            </div>
+
+            <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
+                <div class="team-image">
+                    <img src="assets/team-2.png" alt="Team Member">
+                    <!-- PLATZHALTER: Team-Foto 2 -->
+                </div>
+                <div class="team-info">
+                    <h4 class="team-name">Edis Salkic</h4>
+                    <p class="team-role">Obmann</p>
+                </div>
+            </div>
+
+            <div class="team-member" data-aos="zoom-in" data-aos-delay="300">
+                <div class="team-image">
+                    <img src="assets/team-3.png" alt="Team Member">
+                    <!-- PLATZHALTER: Team-Foto 3 -->
+                </div>
+                <div class="team-info">
+                    <h4 class="team-name">Ayscha Basic-Salkic</h4>
+                    <p class="team-role">Kassiererin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Feedback</h2>
+        <div class="title-divider" data-aos="fade-up"></div>
+
+        <div class="testimonials-slider" id="testimonialsSlider">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-item active" data-aos="fade-up">
+                <div class="testimonial-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    Liebes KARIM HELPS – Team! Sie haben uns in dieser herausfordernden Zeit sehr geholfen – ein großes DANKE dafür!
+                </p>
+                <div class="testimonial-author">
+                    <h4>Fundraising Sozialverein B37</h4>
+                    <p>Österreich</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-item" data-aos="fade-up">
+                <div class="testimonial-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    Wir als globale Wohltätigkeits-Waisenhausorganisation wurden von Karim international mit einem 6-Loch-Projekt gesegnet, das wir in verschiedenen Regionen Ugandas umgesetzt haben.
+                </p>
+                <div class="testimonial-author">
+                    <h4>Global Charity Orphanage Organization</h4>
+                    <p>Uganda</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-item" data-aos="fade-up">
+                <div class="testimonial-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    Ich finde Karim Helps perfekt so wie es ist. Wir brauchen mehr solcher Menschen die sich selbstlos einsetzen für andere.
+                </p>
+                <div class="testimonial-author">
+                    <h4>Muhammed F.</h4>
+                    <p>Mitglied</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Navigation -->
+        <div class="testimonial-dots" id="testimonialDots"></div>
+    </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Unsere Partner</h2>
+        <div class="title-divider" data-aos="fade-up"></div>
+
+        <div class="partners-grid" data-aos="fade-up">
+            <div class="partner-logo">
+                <img src="assets/mali-studio.png" alt="Partner 1">
+                <!-- PLATZHALTER: Partner-Logo -->
+            </div>
+            <div class="partner-logo">
+                <img src="assets/partner-2.png" alt="Partner 2">
+                <!-- PLATZHALTER: Partner-Logo -->
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Contact Info -->
+            <div class="footer-col">
+                <h3 class="footer-title">Kontakt</h3>
+                <div class="contact-item">
+                    <i class="fas fa-home"></i>
+                    <div>
+                        <p>Traunuferstraße 293</p>
+                        <p>4053 Haid bei Ansfelden</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:office@karim-helps.at">office@karim-helps.at</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+436607756111">+43 660 77 56 111</a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Projekte</a></li>
+                    <li><a href="#">Spenden</a></li>
+                    <li><a href="#">Mitgliedschaft</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-col">
+                <h3 class="footer-title">Rechtliches</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">AGB</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="footer-col">
+                <h3 class="footer-title">Folge uns</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Karim Helps. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
 </body>
 </html>
