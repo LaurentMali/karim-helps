@@ -50,182 +50,184 @@ window.addEventListener('scroll', () => {
 });
 
 // ========================================
-// HERO SLIDER
+// HERO SLIDER (with safety checks)
 // ========================================
 const heroSlides = document.querySelectorAll('.hero-slide');
 const heroPrev = document.getElementById('heroPrev');
 const heroNext = document.getElementById('heroNext');
 const heroDotsContainer = document.getElementById('heroDots');
 
-let currentHeroSlide = 0;
-let heroSlideInterval;
+// ONLY run if hero elements exist
+if (heroSlides.length > 0 && heroPrev && heroNext && heroDotsContainer) {
+    let currentHeroSlide = 0;
+    let heroSlideInterval;
 
-// Create dots
-heroSlides.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('hero-dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToHeroSlide(index));
-    heroDotsContainer.appendChild(dot);
-});
-
-const heroDots = document.querySelectorAll('.hero-dot');
-
-function showHeroSlide(index) {
-    heroSlides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        heroDots[i].classList.remove('active');
+    // Create dots
+    heroSlides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('hero-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToHeroSlide(index));
+        heroDotsContainer.appendChild(dot);
     });
 
-    heroSlides[index].classList.add('active');
-    heroDots[index].classList.add('active');
-    currentHeroSlide = index;
-}
+    const heroDots = document.querySelectorAll('.hero-dot');
 
-function nextHeroSlide() {
-    currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
-    showHeroSlide(currentHeroSlide);
-}
+    function showHeroSlide(index) {
+        heroSlides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            heroDots[i].classList.remove('active');
+        });
 
-function prevHeroSlide() {
-    currentHeroSlide = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
-    showHeroSlide(currentHeroSlide);
-}
+        heroSlides[index].classList.add('active');
+        heroDots[index].classList.add('active');
+        currentHeroSlide = index;
+    }
 
-function goToHeroSlide(index) {
-    showHeroSlide(index);
-    resetHeroInterval();
-}
+    function nextHeroSlide() {
+        currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+        showHeroSlide(currentHeroSlide);
+    }
 
-function resetHeroInterval() {
-    clearInterval(heroSlideInterval);
+    function prevHeroSlide() {
+        currentHeroSlide = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+        showHeroSlide(currentHeroSlide);
+    }
+
+    function goToHeroSlide(index) {
+        showHeroSlide(index);
+        resetHeroInterval();
+    }
+
+    function resetHeroInterval() {
+        clearInterval(heroSlideInterval);
+        heroSlideInterval = setInterval(nextHeroSlide, 5000);
+    }
+
+    // Event listeners
+    heroNext.addEventListener('click', () => {
+        nextHeroSlide();
+        resetHeroInterval();
+    });
+
+    heroPrev.addEventListener('click', () => {
+        prevHeroSlide();
+        resetHeroInterval();
+    });
+
+    // Auto-play
     heroSlideInterval = setInterval(nextHeroSlide, 5000);
+
+    // Pause on hover
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', () => clearInterval(heroSlideInterval));
+        heroSection.addEventListener('mouseleave', () => {
+            heroSlideInterval = setInterval(nextHeroSlide, 5000);
+        });
+    }
 }
-
-// Event listeners
-heroNext.addEventListener('click', () => {
-    nextHeroSlide();
-    resetHeroInterval();
-});
-
-heroPrev.addEventListener('click', () => {
-    prevHeroSlide();
-    resetHeroInterval();
-});
-
-// Auto-play
-heroSlideInterval = setInterval(nextHeroSlide, 5000);
-
-// Pause on hover
-const heroSection = document.querySelector('.hero');
-heroSection.addEventListener('mouseenter', () => clearInterval(heroSlideInterval));
-heroSection.addEventListener('mouseleave', () => {
-    heroSlideInterval = setInterval(nextHeroSlide, 5000);
-});
-
 // ========================================
 // COUNTER ANIMATION (Impact Stats)
 // ========================================
 const statNumbers = document.querySelectorAll('.stat-number');
-let counterAnimated = false;
-
-function animateCounters() {
-    if (counterAnimated) return;
-
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        const duration = 2000; // 2 seconds
-        const increment = target / (duration / 16); // 60 FPS
-        let current = 0;
-
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                stat.textContent = Math.floor(current).toLocaleString('de-DE');
-                requestAnimationFrame(updateCounter);
-            } else {
-                stat.textContent = target.toLocaleString('de-DE') + '+';
-            }
-        };
-
-        updateCounter();
-    });
-
-    counterAnimated = true;
-}
-
-// Trigger counter animation when stats section is in view
 const statsSection = document.querySelector('.impact-stats');
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-        }
-    });
-}, { threshold: 0.5 });
 
-if (statsSection) {
+if (statNumbers.length > 0 && statsSection) {
+    let counterAnimated = false;
+
+    function animateCounters() {
+        if (counterAnimated) return;
+
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    stat.textContent = Math.floor(current).toLocaleString('de-DE');
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    stat.textContent = target.toLocaleString('de-DE') + '+';
+                }
+            };
+
+            updateCounter();
+        });
+
+        counterAnimated = true;
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+            }
+        });
+    }, { threshold: 0.5 });
+
     statsObserver.observe(statsSection);
 }
-
 // ========================================
 // TESTIMONIALS SLIDER
 // ========================================
 const testimonialItems = document.querySelectorAll('.testimonial-item');
 const testimonialDotsContainer = document.getElementById('testimonialDots');
 
-let currentTestimonial = 0;
-let testimonialInterval;
+if (testimonialItems.length > 0 && testimonialDotsContainer) {
+    let currentTestimonial = 0;
+    let testimonialInterval;
 
-// Create dots
-testimonialItems.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('testimonial-dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToTestimonial(index));
-    testimonialDotsContainer.appendChild(dot);
-});
-
-const testimonialDots = document.querySelectorAll('.testimonial-dot');
-
-function showTestimonial(index) {
-    testimonialItems.forEach((item, i) => {
-        item.classList.remove('active');
-        testimonialDots[i].classList.remove('active');
+    // Create dots
+    testimonialItems.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('testimonial-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToTestimonial(index));
+        testimonialDotsContainer.appendChild(dot);
     });
 
-    testimonialItems[index].classList.add('active');
-    testimonialDots[index].classList.add('active');
-    currentTestimonial = index;
-}
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
 
-function nextTestimonial() {
-    currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-    showTestimonial(currentTestimonial);
-}
+    function showTestimonial(index) {
+        testimonialItems.forEach((item, i) => {
+            item.classList.remove('active');
+            testimonialDots[i].classList.remove('active');
+        });
 
-function goToTestimonial(index) {
-    showTestimonial(index);
-    resetTestimonialInterval();
-}
+        testimonialItems[index].classList.add('active');
+        testimonialDots[index].classList.add('active');
+        currentTestimonial = index;
+    }
 
-function resetTestimonialInterval() {
-    clearInterval(testimonialInterval);
-    testimonialInterval = setInterval(nextTestimonial, 6000);
-}
+    function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+        showTestimonial(currentTestimonial);
+    }
 
-// Auto-play testimonials
-testimonialInterval = setInterval(nextTestimonial, 6000);
+    function goToTestimonial(index) {
+        showTestimonial(index);
+        resetTestimonialInterval();
+    }
 
-// Pause on hover
-const testimonialsSection = document.querySelector('.testimonials-slider');
-if (testimonialsSection) {
-    testimonialsSection.addEventListener('mouseenter', () => clearInterval(testimonialInterval));
-    testimonialsSection.addEventListener('mouseleave', () => {
+    function resetTestimonialInterval() {
+        clearInterval(testimonialInterval);
         testimonialInterval = setInterval(nextTestimonial, 6000);
-    });
-}
+    }
 
+    testimonialInterval = setInterval(nextTestimonial, 6000);
+
+    const testimonialsSection = document.querySelector('.testimonials-slider');
+    if (testimonialsSection) {
+        testimonialsSection.addEventListener('mouseenter', () => clearInterval(testimonialInterval));
+        testimonialsSection.addEventListener('mouseleave', () => {
+            testimonialInterval = setInterval(nextTestimonial, 6000);
+        });
+    }
+}
 // ========================================
 // SMOOTH SCROLL FOR ANCHOR LINKS
 // ========================================

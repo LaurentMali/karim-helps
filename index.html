@@ -15,31 +15,37 @@
 </head>
 <body>
 
-<!-- HEADER / NAVIGATION -->
 <header class="header" id="header">
     <div class="container">
         <div class="nav-wrapper">
             <!-- Logo -->
             <div class="logo">
-                <img src="assets/logo.png" alt="Karim Helps Logo">
-                <!-- PLATZHALTER: Ersetze mit deinem Logo -->
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Karim Helps Logo">
+                </a>
             </div>
 
             <!-- Navigation -->
             <nav class="nav" id="nav">
                 <ul class="nav-list">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="projects.html" class="nav-link">Fertige Projekte</a></li>
                     <li><a href="current-projects.html" class="nav-link">Aktuelle Projekte</a></li>
                     <li><a href="#about" class="nav-link">Über uns</a></li>
                     <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
                     <li><a href="mitgliedschaft.html" class="nav-link">Mitgliedschaft</a></li>
                     <li><a href="spendenboxen.html" class="nav-link">Spendenboxen</a></li>
+
+                    <!-- NUR FÜR MOBILE -->
+                    <li class="mobile-only-donate">
+                        <a href="spenden.html" class="nav-link">Spenden</a>
+                    </li>
                 </ul>
             </nav>
-
-            <!-- CTA Button -->
-            <a href="spenden.html" class="btn btn-primary btn-donate-header">Jetzt Spenden</a>
+            <!-- DESKTOP CTA BUTTON -->
+            <a href="spenden.html" class="btn btn-primary btn-donate-header">
+                Jetzt Spenden
+            </a>
 
             <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
@@ -89,15 +95,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Slider Controls -->
-    <button class="hero-prev" id="heroPrev">
-        <i class="fas fa-chevron-left"></i>
-    </button>
-    <button class="hero-next" id="heroNext">
-        <i class="fas fa-chevron-right"></i>
-    </button>
-
     <!-- Slider Dots -->
     <div class="hero-dots" id="heroDots"></div>
 </section>
