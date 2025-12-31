@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spenden für Karim Helps">
+  <title>Jetzt Spenden - Karim Helps</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="spenden.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER / NAVIGATION (wie auf der anderen Seite) -->
+<header class="header" id="header">
+  <div class="container">
+    <div class="nav-wrapper">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="assets/logo.png" alt="Karim Helps Logo">
+        <!-- PLATZHALTER: Ersetze mit deinem Logo -->
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Fertige Projekte</a></li>
+          <li><a href="current-projects.html" class="nav-link">Aktuelle Projekte</a></li>
+          <li><a href="#about" class="nav-link">Über uns</a></li>
+          <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+          <li><a href="mitgliedschaft.html" class="nav-link">Mitgliedschaft</a></li>
+          <li><a href="spendenboxen.html" class="nav-link">Spendenboxen</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="spenden.html" class="btn btn-primary btn-donate-header">Jetzt Spenden</a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- SPENDEN-SECTION -->
+<main>
+  <section class="donate-section" id="donate">
+    <div class="container">
+
+      <div class="donate-header" data-aos="fade-up">
+        <h2>Jetzt Spenden</h2>
+        <p>Unterstütze Karim Helps – jede Spende hilft uns, Projekte umzusetzen!</p>
+      </div>
+
+      <div class="donate-options" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- PayPal -->
+        <div class="donate-option">
+          <i class="fab fa-paypal"></i>
+          <h3>PayPal</h3>
+          <p>Schnell & sicher direkt über PayPal spenden.</p>
+          <a href="https://www.paypal.me/Karimhelps2023?locale.x=de_AT" target="_blank" class="btn btn-primary btn-lg">
+            Jetzt via PayPal
+          </a>
+        </div>
+
+        <div class="donate-option donate-boxes">
+          <i class="fas fa-box"></i>
+          <h3>Spendenboxen</h3>
+          <p>Gib deine Spende direkt an einem unserer Standorte ab. Einfach deinen nähesten Standort suchen und deine Spende dort abgeben.</p>
+          <a href="spendenboxen.html" class="btn btn-primary btn-lg">
+            Zu den Spendenboxen
+          </a>
+        </div>
+
+        <!-- Banküberweisung -->
+        <div class="donate-option">
+          <i class="fas fa-university"></i>
+          <h3>Banküberweisung</h3>
+          <p>Überweise direkt auf unser Konto:</p>
+          <div class="bank-details">
+            <p>Empfänger: Karim Helps (Edis Salkic)</p>
+            <p>IBAN: LT90 3250 0211 7805 2972</p>
+            <p>Verwendungszweck: Spende (Projektname) - Karim Helps</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER (wie auf anderen Seiten) -->
+<footer class="footer">
+<div class="container">
+  <div class="footer-grid">
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h3 class="footer-title">Kontakt</h3>
+      <div class="contact-item">
+        <i class="fas fa-home"></i>
+        <div>
+          <p>Traunuferstraße 293</p>
+          <p>4053 Haid bei Ansfelden</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:office@karim-helps.at">office@karim-helps.at</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+436607756111">+43 660 77 56 111</a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html#about">Über uns</a></li>
+        <li><a href="projects.html">Projekte</a></li>
+        <li><a href="spenden.html">Spenden</a></li>
+        <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-col">
+      <h3 class="footer-title">Rechtliches</h3>
+      <ul class="footer-links">
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">AGB</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-col">
+      <h3 class="footer-title">Folge uns</h3>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Karim Helps. Alle Rechte vorbehalten.</p>
+  </div>
+</div
+</footer>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+</body>
+</html>

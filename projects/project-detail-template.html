@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt – Karim Helps</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="project-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <a href="../index.html"><img src="../assets/logo.png" alt="Karim Helps Logo"></a>
+            </div>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../projects.html" class="nav-link active">Fertige Projekte</a></li>
+                    <li><a href="#" class="nav-link">Aktuelle Projekte</a></li>
+                    <li><a href="../index.html#about" class="nav-link">Über uns</a></li>
+                    <li><a href="../kontakt.html" class="nav-link">Kontakt</a></li>
+                    <li><a href="#" class="nav-link">Mitgliedschaft</a></li>
+                    <li><a href="#" class="nav-link">Spendenboxen</a></li>
+                </ul>
+            </nav>
+            <a href="#donate" class="btn btn-primary btn-donate-header">Jetzt Spenden</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<section class="project-detail">
+    <div class="container">
+
+        <!-- TITEL -->
+        <h1 class="project-title">
+            {{PROJECT_TITLE}}
+        </h1>
+
+        <!-- META INFO -->
+        <div class="project-info">
+            <span><i class="fas fa-calendar"></i> {{PROJECT_DATE}}</span>
+            <span><i class="fas fa-map-marker-alt"></i> {{PROJECT_LOCATION}}</span>
+            <span><i class="fas fa-check-circle"></i> {{PROJECT_STATUS}}</span>
+        </div>
+
+        <!-- IMAGE + TEXT -->
+        <div class="project-layout">
+            <div class="project-image">
+                <img src="{{PROJECT_IMAGE}}" alt="{{PROJECT_TITLE}}">
+            </div>
+            <article class="project-text">
+                {{PROJECT_DESCRIPTION}}
+            </article>
+        </div>
+
+        <!-- QUOTE -->
+        <blockquote class="project-quote">
+            {{PROJECT_QUOTE}}
+        </blockquote>
+
+        <!-- CTA -->
+        <div class="project-cta">
+            <a href="../projects.html" class="btn btn-primary">
+                ← Zurück zu den Projekten
+            </a>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

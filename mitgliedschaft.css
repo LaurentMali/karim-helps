@@ -1,0 +1,124 @@
+/* =====================================================
+   BASE
+===================================================== */
+.membership-section {
+    padding: 90px 0;
+    background: #f6f9fc;
+    font-family: "Poppins", sans-serif;
+}
+
+.membership-header {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.membership-header h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.membership-header p {
+    color: #64748b;
+    font-size: 1.05rem;
+}
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+.membership-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.benefit-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.benefit-card i {
+    font-size: 2rem;
+    color: #1f8a70;
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+.membership-form-wrapper {
+    max-width: 520px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.membership-form-wrapper h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.form-hint {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.membership-form .form-group {
+    margin-bottom: 20px;
+}
+
+.membership-form label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.membership-form input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+}
+
+.membership-form input:focus {
+    outline: none;
+    border-color: #1f8a70;
+    box-shadow: 0 0 0 3px rgba(31,138,112,0.15);
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 999px;
+}
+
+.form-note {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 900px) {
+    .membership-benefits {
+        grid-template-columns: 1fr;
+    }
+}

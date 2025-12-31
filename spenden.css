@@ -1,0 +1,101 @@
+/* =====================================================
+   DONATE SECTION
+===================================================== */
+.donate-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1f8a70, #2cbf6c);
+    color: #fff;
+    text-align: center;
+}
+
+.donate-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.donate-header p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 50px;
+}
+
+.donate-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.donate-option {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.donate-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+.donate-option i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.donate-option h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.donate-option p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 20px;
+}
+
+/* Spendenboxen Card */
+.donate-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.donate-boxes i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.donate-boxes p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.9);
+}
+
+.bank-details p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    margin: 5px 0;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #fff;
+    color: #1f8a70;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #e0f7f1;
+    color: #1f8a70;
+}

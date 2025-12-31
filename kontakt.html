@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontaktiere Karim Helps - Wir sind für dich da">
+  <title>Kontakt - Karim Helps</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kontakt.css">
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header class="header" id="header">
+  <div class="container">
+    <div class="nav-wrapper">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Karim Helps Logo">
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Fertige Projekte</a></li>
+          <li><a href="current-projects.html" class="nav-link">Aktuelle Projekte</a></li>
+          <li><a href="index.html#about" class="nav-link">Über uns</a></li>
+          <li><a href="kontakt.html" class="nav-link active">Kontakt</a></li>
+          <li><a href="mitgliedschaft.html" class="nav-link">Mitgliedschaft</a></li>
+          <li><a href="spendenboxen.html" class="nav-link">Spendenboxen</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="spenden.html" class="btn btn-primary btn-donate-header">Jetzt Spenden</a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-overlay"></div>
+  <div class="container">
+    <div class="page-header-content" data-aos="fade-up">
+      <h1 class="page-title">Kontaktiere uns</h1>
+      <p class="page-subtitle">Wir sind für dich da - Schreib uns eine Nachricht</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form-wrapper" data-aos="fade-right">
+        <h2 class="section-title">Schreib uns eine Nachricht</h2>
+        <p class="section-description">
+          Fülle das Formular aus und wir melden uns so schnell wie möglich bei dir.
+        </p>
+
+        <!-- FORMSPREE FORM -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="contactForm">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">
+                <i class="fas fa-user"></i>
+                Name *
+              </label>
+              <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Dein vollständiger Name"
+                      required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email">
+                <i class="fas fa-envelope"></i>
+                E-Mail *
+              </label>
+              <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="deine@email.com"
+                      required
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">
+              <i class="fas fa-phone"></i>
+              Telefon (Optional)
+            </label>
+            <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+43 123 456 7890"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="subject">
+              <i class="fas fa-tag"></i>
+              Betreff *
+            </label>
+            <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Worum geht es?"
+                    required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              <i class="fas fa-comment-dots"></i>
+              Nachricht *
+            </label>
+            <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Deine Nachricht an uns..."
+                    required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">
+            <i class="fas fa-paper-plane"></i>
+            Nachricht senden
+          </button>
+
+          <!-- Success/Error Messages -->
+          <div class="form-message" id="formMessage"></div>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO & MAP -->
+      <div class="contact-info-wrapper" data-aos="fade-left">
+
+        <!-- Contact Cards -->
+        <div class="contact-cards">
+
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Adresse</h3>
+            <p>Traunuferstraße 293</p>
+            <p>4053 Haid bei Ansfelden</p>
+            <p>Österreich</p>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Telefon</h3>
+            <a href="tel:+436607756111">+43 660 77 56 111</a>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>E-Mail</h3>
+            <a href="mailto:office@karim-helps.at">office@karim-helps.at</a>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="contact-social">
+          <h3>Folge uns</h3>
+          <div class="social-links-large">
+            <a href="#" class="social-link-large">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-link-large">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-link-large">
+              <i class="fab fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+            <a href="#" class="social-link-large">
+              <i class="fab fa-youtube"></i>
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAPS -->
+<section class="map-section">
+  <div class="map-container">
+    <!-- Google Maps Embed -->
+    <!-- Ersetze mit deinem eigenen Embed-Code von Google Maps -->
+    <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2655.8234567890123!2d14.2845678!3d48.2345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDE0JzA0LjQiTiAxNMKwMTcnMDQuNCJF!5e0!3m2!1sde!2sat!4v1234567890123!5m2!1sde!2sat"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <!-- Map Overlay Info -->
+    <div class="map-overlay-info">
+      <div class="map-info-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <strong>Karim Helps e.V.</strong>
+          <p>Traunuferstraße 293, 4053 Haid bei Ansfelden</p>
+        </div>
+        <a href="https://maps.google.com/?q=Traumuferstraße+293+4053+Haid+bei+Ansfelden" target="_blank" class="btn btn-primary btn-sm">
+          Route planen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION (Optional) -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Häufig gestellte Fragen</h2>
+    <div class="title-divider center" data-aos="fade-up"></div>
+
+    <div class="faq-grid">
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="faq-question">
+          <i class="fas fa-question-circle"></i>
+          <h3>Wie kann ich spenden?</h3>
+        </div>
+        <p>Du kannst direkt auf unserer Website über den "Jetzt Spenden"-Button spenden. </p>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="faq-question">
+          <i class="fas fa-question-circle"></i>
+          <h3>Sind Spenden steuerlich absetzbar?</h3>
+        </div>
+        <p>Ja, Karim Helps ist als gemeinnütziger Verein anerkannt. Du erhältst eine Spendenbestätigung.</p>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="faq-question">
+          <i class="fas fa-question-circle"></i>
+          <h3>Kann ich bei Projekten mithelfen?</h3>
+        </div>
+        <p>Selbstverständlich! Kontaktiere uns und wir besprechen gemeinsam die Möglichkeiten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3 class="footer-title">Kontakt</h3>
+        <div class="contact-item">
+          <i class="fas fa-home"></i>
+          <div>
+            <p>Traumuferstraße 293</p>
+            <p>4053 Haid bei Ansfelden</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:office@karim-helps.at">office@karim-helps.at</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+436607756111">+43 660 77 56 111</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#about">Über uns</a></li>
+          <li><a href="projects.html">Projekte</a></li>
+          <li><a href="#donate">Spenden</a></li>
+          <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="footer-col">
+        <h3 class="footer-title">Rechtliches</h3>
+        <ul class="footer-links">
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">AGB</a></li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-col">
+        <h3 class="footer-title">Folge uns</h3>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Karim Helps. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>

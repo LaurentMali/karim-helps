@@ -129,8 +129,8 @@ ul {
 }
 
 .logo img {
-    height: 50px;
-    width: auto;
+    height: 35px;
+    width: fit-content;
 }
 
 .nav-list {
